@@ -25,13 +25,22 @@ jobs:
         run: |
           node --check app.js
           node --check sw.js
+          node --check pwa.js
           node -e "JSON.parse(require('fs').readFileSync('manifest.webmanifest','utf8'))"
       - uses: actions/configure-pages@v5
       - name: Prepare static files
         run: |
           mkdir -p _site
-          cp index.html style.css app.js sw.js manifest.webmanifest icon.svg icon-192.png icon-512.png .nojekyll _site/
+          cp index.html style.css app.js pwa.js sw.js manifest.webmanifest icon.svg icon-192.png icon-512.png .nojekyll _site/
           cp -r vendor _site/vendor
+          python3 - <<'PYBUILD'
+          import os, pathlib, json
+          build = os.environ['GITHUB_SHA'][:12]
+          for file in ('pwa.js', 'sw.js'):
+              p = pathlib.Path('_site') / file
+              p.write_text(p.read_text().replace('__CALLER_BUILD__', build))
+          pathlib.Path('_site/version.json').write_text(json.dumps({'version':'1.1.0','build':build})+'\n')
+          PYBUILD
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

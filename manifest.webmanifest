@@ -27,5 +27,11 @@
       "type": "image/png",
       "purpose": "any"
     }
+  ],
+  "description": "Nhắn tin, gọi thoại và gọi video trực tiếp qua WebRTC.",
+  "prefer_related_applications": false,
+  "categories": [
+    "social",
+    "communication"
   ]
 }
