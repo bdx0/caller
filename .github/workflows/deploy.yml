@@ -39,7 +39,7 @@ jobs:
           for file in ('pwa.js', 'sw.js'):
               p = pathlib.Path('_site') / file
               p.write_text(p.read_text().replace('__CALLER_BUILD__', build))
-          pathlib.Path('_site/version.json').write_text(json.dumps({'version':'1.3.0','build':build})+'\n')
+          pathlib.Path('_site/version.json').write_text(json.dumps({'version':'1.4.0','build':build})+'\n')
           PYBUILD
       - uses: actions/upload-pages-artifact@v3
         with:

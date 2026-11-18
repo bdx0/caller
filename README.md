@@ -26,3 +26,8 @@ GitHub Pages: Settings → Pages → GitHub Actions (workflow deploy.yml). HTTPS
 - Bấm tên tài khoản phía trên danh sách chat để chuyển tài khoản, thêm tài khoản mới hoặc khôi phục tài khoản bằng mã bí mật. Mã khôi phục trùng ID sẽ dùng lại tài khoản đã lưu thay vì tạo trùng.
 - Mỗi tab chỉ hoạt động với một tài khoản tại một thời điểm; chuyển tài khoản đóng các phiên WebRTC hiện tại (có xác nhận nếu đang kết nối). Các tài khoản khác vẫn được lưu, không có dịch vụ nhận cuộc gọi nền.
 - Device ID nhận diện môi trường lưu trữ của app, không nhận diện phần cứng. Safari/Chrome và PWA tách kho dữ liệu vẫn phải dùng mã khôi phục. Web Locks giảm khởi tạo trùng trong cùng kho lưu trữ. Persistent storage được yêu cầu khi người dùng tạo/khôi phục, quyền tùy trình duyệt.
+
+### Giao diện v1.4
+- Thiết kế responsive mới: bộ điều hướng mobile dạng dock, danh sách trò chuyện có bộ lọc và tìm kiếm tiếng Việt không dấu, trạng thái ICE/đã kết nối và tin nhắn chờ gửi.
+- Giao diện chat có composer nhiều dòng, lưu nháp trong phiên mở app theo từng tài khoản/cuộc trò chuyện, giữ vị trí khi đọc tin cũ; màn hình gọi có thời lượng cuộc gọi và điều khiển rõ ràng.
+- Không thay đổi kiến trúc P2P, dữ liệu tài khoản hay cơ chế mã hóa WebRTC.
