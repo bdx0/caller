@@ -1,6 +1,6 @@
 'use strict';
 (()=>{
-const VERSION='1.2.0', BUILD='__CALLER_BUILD__', $=id=>document.getElementById(id);
+const VERSION='1.3.0', BUILD='__CALLER_BUILD__', $=id=>document.getElementById(id);
 let promptEvent=null,reg=null,checking=false,applying=false,reloading=false,lastCheck=0,remoteBuild=null,registered=Promise.resolve(null);
 const standalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
 const ios=()=>/iPad|iPhone|iPod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
